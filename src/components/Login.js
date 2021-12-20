@@ -3,11 +3,11 @@ import { Button, Form } from 'react-bootstrap';
 
 
 export default function Login() {
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
   
     function validateForm() {
-      return email.length > 0 && password.length > 8;
+      return username.length > 5 && password.length > 8;
     }
   
     function onSubmit(event) {
@@ -17,26 +17,28 @@ export default function Login() {
     return (
       <div className="Login">
         <Form onSubmit={onSubmit}>
-          <Form.Group size="lg" controlId="email">
-            <Form.Label>Email</Form.Label>
+          <Form.Group className="username" controlId="username">
+            <Form.Label>Username</Form.Label>
             <br/>
             <Form.Control
               autoFocus
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
-          <Form.Group size="lg" controlId="password">
+          <Form.Group className="password" controlId="password">
             <Form.Label>Password</Form.Label>
             <br/>
             <Form.Control
               type="password"
+              name="password"     
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button block size="lg" type="submit" disabled={!validateForm()}>
+          <Button className="submitBtn" type="submit" disabled={!validateForm()}>
             Login
           </Button>
         </Form>
