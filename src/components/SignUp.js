@@ -64,8 +64,10 @@ const SignUp = () => {
                   type="tel"
                   autoComplete="phone"
                   required
-                  className="style"                />
+                  className="style"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"                />
               </div>
+              <small>Format: 123-456-7890</small>
             </div>
             <div>
               <button

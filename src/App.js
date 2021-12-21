@@ -33,10 +33,10 @@ function App() {
         </ul>
       </header>
       <Switch>
-        <PrivateRoute path='/plants' />
-        <PrivateRoute path='/edituser/:id' />
+        <Route path='/plants' component={Plants}/>
+        <Route path='/edituser/:id' />
         <Route path='/signup' component={SignUp}/>
-        <PrivateRoute path='/logout' />
+        <Route path='/logout' />
         <Route path='/login' component={Login} />
         <Route path="/" />    
       </Switch>
