@@ -49,7 +49,7 @@ export default function Plants(props) {
                     data.map(item => {
                         return (
                             <div key={item.plant_id}>
-                                <img src={item.image} alt="" />
+                                <img src={item.image} alt={item.plant_nickname} />
                                 <p>Species: {item.species_name}</p>
                                 <p>H20 Frequency: {item.h2o_frequency}</p>
                                 <p>Name: {item.plant_nickname}</p>

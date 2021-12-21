@@ -12,8 +12,7 @@ function App() {
 
   return (
     <div className="App">
-    <Plants />
-      {/* <header className="App-header">
+      <header className="App-header">
         <h1>Water My Plants</h1>
         <ul>
           <li>
@@ -40,7 +39,7 @@ function App() {
         <PrivateRoute path='/logout' />
         <Route path='/login' component={Login} />
         <Route path="/" />    
-      </Switch> */}
+      </Switch>
     </div>
   );
 }
