@@ -3,11 +3,11 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 const Logout = () => {        
     axiosWithAuth().post('http-link')
         .then(res => {
-            localStorage.removeItem('token')
+            localStorage.removeItem('token');
             window.location.pathname = '/login'
         })
         .catch(err => console.log(err))
-        return(<div><h2>Logged out</h2></div>);
+        return(<div></div>);
 }
 
 
