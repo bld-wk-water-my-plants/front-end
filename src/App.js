@@ -35,7 +35,7 @@ function App() {
       <Switch>
         <PrivateRoute path='/plants' />
         <PrivateRoute path='/edituser' />
-        <Route path='/SignUp' component={SignUp} />
+        <Route path='/signup' component={SignUp} />
         <PrivateRoute path='/logout' />
         <Route path='/login' component={Login} />
         <Route path="/" />    
