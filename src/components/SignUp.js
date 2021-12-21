@@ -3,7 +3,7 @@ import React from "react";
 /* this may need to be edited because i was rushing while trying to do this so im not confident in it*/
 
 
-const Signup = () => {
+const SignUp = () => {
   return (
     <div className="top">
       <div className="title">
@@ -61,11 +61,13 @@ const Signup = () => {
                 <input
                   id="phone"
                   name="phone"
-                  type="phone"
+                  type="tel"
                   autoComplete="phone"
                   required
-                  className="style"                />
+                  className="style"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"                />
               </div>
+              <small>Format: 123-456-7890</small>
             </div>
             <div>
               <button
@@ -81,6 +83,6 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
 
 

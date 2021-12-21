@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-
+import axios from 'axios';
 
 export default function Login() {
     const [username, setUsername] = useState("");
@@ -12,6 +12,16 @@ export default function Login() {
   
     function onSubmit(event) {
       event.preventDefault();
+      axios.post('https://water-my-plants-build-week.herokuapp.com/api/auth/login', {username, password})
+        .then(esp=>{
+          const { token, user_id, username } = esp.data;
+          localStorage.setItem("token", token);
+          localStorage.setItem("user_id", user_id);
+          localStorage.setItem("username", username);
+        })
+        .catch(err=>{
+          console.error(err);
+        })
     }
   
     return (
@@ -40,7 +50,7 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button className="submitBtn" type="submit" disabled={!validateForm()}>
+          <Button className="submitBtn" type="submit" >
             Login
           </Button>
         </Form>
