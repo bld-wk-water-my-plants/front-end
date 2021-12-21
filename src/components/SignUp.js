@@ -3,7 +3,7 @@ import React from "react";
 /* this may need to be edited because i was rushing while trying to do this so im not confident in it*/
 
 
-const Signup = () => {
+const SignUp = () => {
   return (
     <div className="top">
       <div className="title">
@@ -18,14 +18,14 @@ const Signup = () => {
               <label
                 htmlFor="email"
               >
-                Email address
+                Username
               </label>
-              <div className="email1">
+              <div className="username">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  id="username"
+                  name="username"
+                  type="test"
+                  autoComplete="nickname"
                   required
                   className="style"
                 />
@@ -61,7 +61,7 @@ const Signup = () => {
                 <input
                   id="phone"
                   name="phone"
-                  type="phone"
+                  type="tel"
                   autoComplete="phone"
                   required
                   className="style"                />
@@ -81,6 +81,6 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;
 
 

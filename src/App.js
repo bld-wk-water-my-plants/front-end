@@ -16,10 +16,10 @@ function App() {
         <h1>Water My Plants</h1>
         <ul>
           <li>
-            {isLoggedIn && <Link to="/edituser">Edit Account</Link>}
+            {!isLoggedIn && <Link to="/edituser">Edit Account</Link>}
           </li>
           <li>
-            {isLoggedIn && <Link to="/plants">Plants</Link>}
+            {!isLoggedIn && <Link to="/plants">Plants</Link>}
           </li>
           <li>
             <Link to="/signup">Sign Up</Link>
@@ -28,14 +28,14 @@ function App() {
             <Link to="/login">Login</Link>
           </li>
           <li>
-            {isLoggedIn && <Link to="/logout">Logout</Link>}
+            {!isLoggedIn && <Link to="/logout">Logout</Link>}
           </li>
         </ul>
       </header>
       <Switch>
         <PrivateRoute path='/plants' />
-        <PrivateRoute path='/edituser' />
-        <Route path='/signup' />
+        <PrivateRoute path='/edituser/:id' />
+        <Route path='/signup' component={SignUp}/>
         <PrivateRoute path='/logout' />
         <Route path='/login' component={Login} />
         <Route path="/" />    
