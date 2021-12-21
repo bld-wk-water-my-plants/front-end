@@ -37,7 +37,7 @@ function App() {
         <PrivateRoute path='/edituser' />
         <Route path='/signup' />
         <PrivateRoute path='/logout' />
-        <Route path='/login' />
+        <Route path='/login' component={Login} />
         <Route path="/" />    
       </Switch>
     </div>
