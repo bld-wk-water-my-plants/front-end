@@ -25,6 +25,7 @@ export default function Login() {
               type="username"
               name="username"
               value={username}
+              placeholder = "Enter a Username"
               onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
@@ -35,6 +36,7 @@ export default function Login() {
               type="password"
               name="password"     
               value={password}
+              placeholder="Enter a Password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
