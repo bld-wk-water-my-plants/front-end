@@ -12,7 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+    <Plants />
+      {/* <header className="App-header">
         <h1>Water My Plants</h1>
         <ul>
           <li>
@@ -33,20 +34,13 @@ function App() {
         </ul>
       </header>
       <Switch>
-<<<<<<< HEAD
         <PrivateRoute path='/plants' component={Plants} />
         <PrivateRoute path='/edituser' />
         <Route path='/signup' component={SignUp} />
         <PrivateRoute path='/logout' />
-=======
-        <Route path='/plants' component={Plants}/>
-        <Route path='/edituser/:id' />
-        <Route path='/signup' component={SignUp}/>
-        <Route path='/logout' />
->>>>>>> 8ef3d8bc0ecb088a497c98826908a19bb73372b9
         <Route path='/login' component={Login} />
         <Route path="/" />    
-      </Switch>
+      </Switch> */}
     </div>
   );
 }
