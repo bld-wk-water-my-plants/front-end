@@ -13,19 +13,19 @@ const Signup = () => {
       </div>
 
       <div className="fill">
-          <form className="emailaddress" action="#" method="POST">
+          <form className="usernamee" action="#" method="POST">
             <div>
               <label
-                htmlFor="email"
+                htmlFor="username"
               >
-                Email address
+                Username
               </label>
-              <div className="email1">
+              <div className="info1">
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
+                  id="userName"
+                  name="userName"
+                  type="username"
+                  autoComplete="username"
                   required
                   className="style"
                 />
@@ -39,7 +39,7 @@ const Signup = () => {
               >
                 Password
               </label>
-              <div className="email1">
+              <div className="info1">
                 <input
                   id="password"
                   name="password"
@@ -52,12 +52,12 @@ const Signup = () => {
             </div>
             <div>
               <label
-                htmlFor="email"
+                htmlFor="phonenum"
                 className="styling"
               >
                 Phone Number
               </label>
-              <div className="email1">
+              <div className="info1">
                 <input
                   id="phone"
                   name="phone"
