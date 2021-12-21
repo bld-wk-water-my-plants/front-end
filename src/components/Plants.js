@@ -48,6 +48,7 @@ export default function Plants(props) {
         update(name, value);
     }
 
+
     return (
         <section>
             <div className="tools">
