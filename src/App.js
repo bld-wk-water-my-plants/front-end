@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Route, Switch, Redirect, Link } from "react-router-dom";
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -8,7 +9,7 @@ import PrivateRoute from './components/PrivateRoute';
 import './App.css';
 
 function App() {
-  const isLoggedIn = localStorage.getItem("token");
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token"));
 
   return (
     <div className="App">
@@ -16,10 +17,10 @@ function App() {
         <h1>Water My Plants</h1>
         <ul>
           <li>
-            {!isLoggedIn && <Link to="/edituser">Edit Account</Link>}
+            {/*isLoggedIn &&*/ <Link to="/edituser">Edit Account</Link>}
           </li>
           <li>
-            {!isLoggedIn && <Link to="/plants">Plants</Link>}
+            {/*isLoggedIn &&*/ <Link to="/plants/:id">Plants</Link>}
           </li>
           <li>
             <Link to="/signup">Sign Up</Link>
@@ -28,7 +29,7 @@ function App() {
             <Link to="/login">Login</Link>
           </li>
           <li>
-            {!isLoggedIn && <Link to="/logout">Logout</Link>}
+            {/*isLoggedIn &&*/ <Link to="/logout">Logout</Link>}
           </li>
         </ul>
       </header>
