@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
-
-
-const url = 'https://water-my-plants-build-week.herokuapp.com/api/plants/';
+import axiosWithAuth from './../utils/axiosWithAuth';
 
 export default function Plants(props) {
 
@@ -16,7 +12,8 @@ export default function Plants(props) {
 
     useEffect(() => {
         const getData = () => {
-            axios.get(url)
+            const id = localStorage.getItem('user_id');
+            axiosWithAuth().get(`/api/plants/${id}`)
             .then(res => {
                 setData(res.data);
                 console.log(res.data)
