@@ -15,6 +15,7 @@ li {
   color: #204963;
 }
 h1{
+  color:rgb(9, 116, 9);
   text-align:left;
 }
 
@@ -30,7 +31,10 @@ p {
 div {
   color:rgb(19, 53, 19)
 }
-
+a {
+  color: rgb(9, 116, 9);
+  text-decoration: none;
+}
 
 
 
