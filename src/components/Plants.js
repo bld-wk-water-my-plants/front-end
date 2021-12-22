@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+const url = 'https://water-my-plants-build-week.herokuapp.com/api/plants/';
 
 export default function Plants(props) {
 
     const { values, update } = props
-
+    const [data, setData] = useState([])
     const onChange = evt => {
         const { name, value } = evt.target;
         update(name, value);
     }
+
+    useEffect(() => {
+        const getData = () => {
+            axios.get(url)
+            .then(res => {
+                setData(res.data);
+                console.log(res.data)
+            })
+            .catch(err => {
+                console.error('Server Error', err)
+            })
+        }
+        getData();
+    },[])
 
     return (
         <section>
@@ -21,14 +38,25 @@ export default function Plants(props) {
 
                 <select value="" name="sort" onChange={onChange}>
                     <option value="">-- Sort --</option>
-                    <option value="A-Z">A-Z</option>
-                    <option value="Z-A">Z-A</option>
-                    <option value="Newest to oldest">Newest to oldest</option>
-                    <option value="Oldest to Newest">Oldest to Newest</option>
+                    <option value="az">A-Z</option>
+                    <option value="za">Z-A</option>
+                    <option value="newToOld">Newest to oldest</option>
+                    <option value="oldToNew">Oldest to Newest</option>
                 </select>
             </div>
             <div className="plantList">
-
+                {
+                    data.map(item => {
+                        return (
+                            <div key={item.plant_id}>
+                                <img src={item.image} alt={item.plant_nickname} />
+                                <p>Species: {item.species_name}</p>
+                                <p>H20 Frequency: {item.h2o_frequency}</p>
+                                <p>Name: {item.plant_nickname}</p>
+                            </div>
+                        )
+                    })
+                }
             </div>
         </section>
     )

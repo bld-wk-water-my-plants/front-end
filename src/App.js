@@ -33,9 +33,9 @@ function App() {
         </ul>
       </header>
       <Switch>
-        <Route path='/plants' component={Plants}/>
-        <Route path='/edituser/:id' />
-        <Route path='/signup' component={SignUp}/>
+        <Route path='/plants' component={Plants} />
+        <Route path='/edituser' />
+        <Route path='/signup' component={SignUp} />
         <Route path='/logout' />
         <Route path='/login' component={Login} />
         <Route path="/" />    
