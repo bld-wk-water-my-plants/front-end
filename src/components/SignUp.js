@@ -8,6 +8,7 @@ const SignUp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [phone_number, setNumber] = useState("");
+  const [error, setError] = useState(false);
   const { push } = useHistory();
 
   const handleSubmit =e=>{
@@ -17,7 +18,7 @@ const SignUp = () => {
         push('/login')
       })
       .catch(err=>{
-        console.log(err.message)
+        setError(err.response.data.message)
       })
   }
   return (
@@ -92,6 +93,7 @@ const SignUp = () => {
               </div>
               <small>Format: 123-456-7890</small>
             </div>
+            {error && <strong>{error}</strong>}
             <div>
               <button
                 type="submit"
