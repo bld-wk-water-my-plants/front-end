@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from 'axios';
 /* this may need to be edited because i was rushing while trying to do this so im not confident in it*/
 //the url posted doesn't allow 
@@ -7,15 +8,17 @@ const SignUp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [number, setNumber] = useState("");
+  const { push } = useHistory();
 
   const handleSubmit =e=>{
     e.preventDefault();
     axios.post('https://water-my-plants-build-week.herokuapp.com/api/auth/register', {username, password, number})
       .then(esp=>{
-        console.log(esp)
+        push('/login')
+        console.log(esp.message)
       })
       .catch(err=>{
-        console.error(err)
+        console.log(err.data.message)
       })
   }
   return (
