@@ -11,7 +11,7 @@ const initialItem = {
 
   //No backend functionality here yet
   
-const AddPlant = ()=>{
+const EditPlant = ()=>{
 	const [item, setItem] = useState(initialItem);
 	const { id } = useParams();
 
@@ -85,5 +85,5 @@ const AddPlant = ()=>{
 	)
 }
 
-export default AddPlant;
+export default EditPlant;
 

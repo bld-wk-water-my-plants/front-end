@@ -3,10 +3,10 @@ import { useParams, useHistory } from "react-router-dom";
 import axiosWithAuth from "./../utils/axiosWithAuth";
 
 const initialItem = {
-  nickname: "",
-  species: "",
+  plant_nickname: "",
+  species_name: "",
   image: "",
-  h2ofrequency: "",
+  h2o_frequency: "",
 };
 
   //No backend functionality here yet
@@ -41,12 +41,12 @@ const AddPlant = ()=>{
 		<div>
 			<h2>Add your plant!</h2>
 			<form onSubmit={handleSubmit}>
-        <input
+      <input
           type="text"
           name="nickname"
           onChange={changeHandler}
-          placeholder="nickname"
-          value={item.nickname}
+          placeholder="Nickname"
+          value={item.plant_nickname}
         />
         <div className="baseline" />
 
@@ -54,17 +54,17 @@ const AddPlant = ()=>{
           type="text"
           name="species"
           onChange={changeHandler}
-          placeholder="species"
-          value={item.species}
+          placeholder="Species"
+          value={item.species_name}
         />
         <div className="baseline" />
 
-        <input
+				<input
           type="text"
           name="h2ofrequency"
           onChange={changeHandler}
-          placeholder="h2ofrequency"
-          value={item.h2ofrequency}
+          placeholder="H20 Frequency"
+          value={item.h2o_frequency}
         />
         <div className="baseline" />
 
