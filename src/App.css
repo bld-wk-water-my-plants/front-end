@@ -1,12 +1,15 @@
 .App {
   text-align: center;
 }
+
 ul {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   margin: 0 0 36px;
   padding: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  width: 40%;
+  margin-left: 55%;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
 }
 
 li {
@@ -14,6 +17,7 @@ li {
   margin-right: 6px;
   color: #204963;
 }
+
 h1{
   text-align:left;
 }
@@ -34,4 +38,83 @@ div {
 
 
 
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 0 36px;
+  padding: 12px;
+  width: 40%;
+  margin-left: 55%;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+}
 
+li {
+  list-style: none;
+  margin-right: 6px;
+  color: #204963;
+}
+
+h1{
+  text-align:left;
+  color: gray;
+  margin-left: 3%;
+}
+
+
+/* nav styling */
+.li {
+  color:gray;
+  font-size: 1.1rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+.li:hover {
+  color: seagreen;
+}
+
+/* login & signup styling */
+.login, .top {
+  font-size: 2.1rem;
+  color: rgba(9, 116, 9);
+  background-color: white;
+  border-radius: 2%;
+  height: 60vh;
+  width: 25%;
+  position: relative;
+  left: 35%;
+  box-shadow: 0px 1px 1px 1px rgb(124, 124, 124);
+}
+
+h2 {
+  font-size: 2rem;
+  padding: 2%;
+  color: rgba(9, 116, 9)
+}
+
+small {
+  font-size: 1rem;
+}
+
+.form-box, .style {
+  height: 5vh;
+  width: 70%;
+  outline: none;
+  background-color: white;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-color: rgba(9, 116, 9);
+}
+
+.submitBtn {
+  height: 6vh;
+  width: 70%;
+  background-color: rgba(9, 116, 9);
+  color: black;
+  border: 2px solid rgba(9, 116, 9);
+  border-radius: 25px;
+  font-size: 1.1rem;
+  padding: 1%;
+  margin-top: 8%;
+}

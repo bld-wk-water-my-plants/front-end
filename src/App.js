@@ -18,19 +18,19 @@ function App() {
         <h1>Water My Plants</h1>
         <ul>
           <li>
-            {!isLoggedIn && <Link to="/edituser">Edit Account</Link>}
+            {/*isLoggedIn &&*/ <Link to="/edituser" className='li'>Edit Account</Link>}
           </li>
           <li>
-            {!isLoggedIn && <Link to="/plants">Plants</Link>}
+            {/*isLoggedIn &&*/ <Link to="/plants" className='li'>Plants</Link>}
           </li>
           <li>
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/signup" className='li' >Sign Up</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/login" className='li'>Login</Link>
           </li>
           <li>
-            {!isLoggedIn && <Link to="/logout">Logout</Link>}
+            {/*isLoggedIn &&*/ <Link to="/logout" className='li'>Logout</Link>}
           </li>
         </ul>
       </header>

@@ -31,18 +31,20 @@ const SignUp = () => {
       <div className="fill">
           <form className="username" onSubmit={handleSubmit}>
             <div>
-              <label
+              {/* <label
                 htmlFor="username"
               >
                 Username
-              </label>
+              </label> */}
               <div className="info1">
                 <input
                   id="userName"
                   name="userName"
                   type="username"
+                  placeholder="Username"
                   autoComplete="username"
                   required
+                  autoFocus
                   className="style"
                   onChange={(e) => setUsername(e.target.value)}
                 />
@@ -50,17 +52,18 @@ const SignUp = () => {
             </div>
 
             <div>
-              <label
+              {/* <label
                 htmlFor="password"
                 className="styling"
               >
                 Password
-              </label>
+              </label> */}
               <div className="info1">
                 <input
                   id="password"
                   name="password"
                   type="password"
+                  placeholder="Password"
                   autoComplete="current-password"
                   required
                   className="style"
@@ -69,18 +72,19 @@ const SignUp = () => {
               </div>
             </div>
             <div>
-              <label
+              {/* <label
                 htmlFor="phonenum"
                 className="styling"
               >
                 Phone Number
-              </label>
+              </label> */}
               <div className="info1">
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
                   autoComplete="phone"
+                  placeholder="Phone Number"
                   required
                   className="style"
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
@@ -91,7 +95,7 @@ const SignUp = () => {
             <div>
               <button
                 type="submit"
-                className ="styling"
+                className ="submitBtn"
               >
                 Submit Signup
               </button>
