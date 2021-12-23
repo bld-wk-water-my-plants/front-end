@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
 export default function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { push } = useHistory();
-
+  
     function validateForm() {
       return username.length > 5 && password.length > 8;
     }
@@ -20,7 +18,6 @@ export default function Login() {
           localStorage.setItem("token", token);
           localStorage.setItem("user_id", user_id);
           localStorage.setItem("username", username);
-          push('/plants')
         })
         .catch(err=>{
           console.error(err);
@@ -28,28 +25,31 @@ export default function Login() {
     }
   
     return (
-      <div className="Login">
+      <div className="login">
         <Form onSubmit={onSubmit}>
           <Form.Group className="username" controlId="username">
-            <Form.Label>Username</Form.Label>
-            <br/>
+          <br/>
+            <h2>Welcome</h2>
             <Form.Control
               autoFocus
+              required
               type="username"
+              className="form-box"
               name="username"
               value={username}
-              placeholder = "Enter a Username"
+              placeholder = "Username"
               onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="password" controlId="password">
-            <Form.Label>Password</Form.Label>
-            <br/>
+            
             <Form.Control
+              required
               type="password"
+              className="form-box"
               name="password"     
               value={password}
-              placeholder="Enter a Password"
+              placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
