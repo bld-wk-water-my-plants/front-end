@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from './../utils/axiosWithAuth';
+import { Link } from "react-router-dom";
 
 export default function Plants(props) {
 
@@ -42,6 +43,9 @@ export default function Plants(props) {
                     <option value="newToOld">Newest to oldest</option>
                     <option value="oldToNew">Oldest to Newest</option>
                 </select>
+                <Link to="/addplant">
+                    <button>Add Plant</button>
+                </Link>
             </div>
             <div className="plantList">
                 {
