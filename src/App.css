@@ -1,5 +1,68 @@
+*{
+  text-align: center;
+}
+
 .App {
   text-align: center;
+}
+
+.tools{
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 1rem;
+  width: 95%;
+}
+
+.dropDown select{
+  margin: 1rem;
+}
+
+.extra button{
+  margin: 1rem;
+}
+
+.plantSection hr{
+ width: 50%;
+}
+
+.plantList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.plant{
+  width: 70%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.plantInfo{
+  background-color: papayawhip;
+  padding: 2rem;
+  width: 50%;
+  transition: transform .2s;
+  border-radius: 2%;
+}
+
+.plantInfo:hover{
+  transform: scale(1.5);
+}
+
+.info{
+  width: 100%;
+}
+
+.plant hr{
+  width: 30%;
+  margin: 7rem;
 }
 
 ul {
