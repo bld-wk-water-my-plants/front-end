@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
 import { Route, Switch, Redirect, Link } from "react-router-dom";
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Plants from './components/Plants';
 import Logout from './components/Logout';
 import EditUser from './components/EditUser';
+import AddPlant from "./components/AddPlant";
+import EditPlant from "./components/EditPlant";
 import PrivateRoute from './components/PrivateRoute';
 import './App.css';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token"));
+  const isLoggedIn = localStorage.getItem("token");
 
   return (
     <div className="App">
@@ -34,10 +35,12 @@ function App() {
         </ul>
       </header>
       <Switch>
-        <Route path='/plants' component={Plants} />
-        <Route path='/edituser' component={EditUser}/>
+        <PrivateRoute path='/plants' component={Plants} />
+        <Route path='/addplant' component={AddPlant} />
+        <Route path='/editplant' component={EditPlant} />
+        <PrivateRoute path='/edituser' />
         <Route path='/signup' component={SignUp} />
-        <Route path='/logout' component={Logout}/>
+        <PrivateRoute path='/logout' />
         <Route path='/login' component={Login} />
         <Route path="/" />    
       </Switch>

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axiosWithAuth from './../utils/axiosWithAuth';
-import AddPlant from './AddPlant';
-import EditPlant from './EditPlant';
+import { Link } from "react-router-dom";
 
 export default function Plants(props) {
-    const isLoggedIn = localStorage.getItem('token')
 
     const { values, update } = props
     const [data, setData] = useState([])
@@ -28,25 +26,9 @@ export default function Plants(props) {
         getData();
     },[])
 
-    const handleEdit = (e)=> {
-        //maybe use boolean to render editplant or have link to editplant url
-    }
-
-  const handleDelete = (e)=> {
-    const id = e.target.id;
-    //does not work, backend not implemented
-    axiosWithAuth.delete(`/api/plants/${id}`)
-      .then(resp=> {
-        console.log(resp.data)
-      })
-      .catch(err=> {
-        console.log(err);
-      })
-  }
-
     return (
         <section>
-            {isLoggedIn && <div className="tools">
+            <div className="tools">
                 <select value="" name="filter" onChange={onChange}>
                     <option value="">-- Filter --</option>
                     <option value="typeA">typeA</option>
@@ -61,9 +43,14 @@ export default function Plants(props) {
                     <option value="newToOld">Newest to oldest</option>
                     <option value="oldToNew">Oldest to Newest</option>
                 </select>
-                
-            </div>}
-            {isLoggedIn && <div className="plantList">
+                <Link to="/addplant">
+                    <button>Add Plant</button>
+                </Link>
+                <Link to="/editplant">
+                <button>Edit Plant</button>
+                </Link>
+            </div>
+            <div className="plantList">
                 {
                     data.map(item => {
                         return (
@@ -72,13 +59,11 @@ export default function Plants(props) {
                                 <p>Species: {item.species_name}</p>
                                 <p>H20 Frequency: {item.h2o_frequency}</p>
                                 <p>Name: {item.plant_nickname}</p>
-                                <button onClick={handleEdit}>Edit</button>
-                                <button id={item.plant_id} onClick={handleDelete}>Delete</button>
                             </div>
                         )
                     })
                 }
-            </div>}
+            </div>
         </section>
     )
 }
