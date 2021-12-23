@@ -9,15 +9,14 @@ const initialItem = {
   h2ofrequency: "",
 };
 
+  //No backend functionality here yet
+
 const AddPlant = ()=>{
 	const [item, setItem] = useState(initialItem);
 
   const changeHandler = ev => {
     ev.persist();
     let value = ev.target.value;
-    if (ev.target.name === "price") {
-      value = parseInt(value, 10);
-    }
 
     setItem({
       ...item,
@@ -27,7 +26,7 @@ const AddPlant = ()=>{
 
   const handleSubmit = e => {
     e.preventDefault();
-    axiosWithAuth().put(`/plants`, item)
+    axiosWithAuth().post(`api/auth/plants`, item)
       .then(resp=> {
 				console.log(resp);
       })
@@ -47,7 +46,7 @@ const AddPlant = ()=>{
           name="nickname"
           onChange={changeHandler}
           placeholder="nickname"
-          //value={item.name}
+          value={item.nickname}
         />
         <div className="baseline" />
 
@@ -56,7 +55,16 @@ const AddPlant = ()=>{
           name="species"
           onChange={changeHandler}
           placeholder="species"
-          //value={item.price}
+          value={item.species}
+        />
+        <div className="baseline" />
+
+        <input
+          type="text"
+          name="h2ofrequency"
+          onChange={changeHandler}
+          placeholder="h2ofrequency"
+          value={item.h2ofrequency}
         />
         <div className="baseline" />
 
