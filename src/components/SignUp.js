@@ -7,18 +7,17 @@ import axios from 'axios';
 const SignUp = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [number, setNumber] = useState("");
+  const [phone_number, setNumber] = useState("");
   const { push } = useHistory();
 
   const handleSubmit =e=>{
     e.preventDefault();
-    axios.post('https://water-my-plants-build-week.herokuapp.com/api/auth/register', {username, password, number})
+    axios.post('https://water-my-plants-build-week.herokuapp.com/api/auth/register', {username, password, phone_number})
       .then(esp=>{
         push('/login')
-        console.log(esp.message)
       })
       .catch(err=>{
-        console.log(err.data.message)
+        console.log(err.message)
       })
   }
   return (
