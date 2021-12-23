@@ -15,10 +15,9 @@ const SignUp = () => {
     axios.post('https://water-my-plants-build-week.herokuapp.com/api/auth/register', {username, password, phone_number})
       .then(esp=>{
         push('/login')
-        console.log(esp)
       })
       .catch(err=>{
-        console.log(err.message)
+        console.log(err.response.data.message)
       })
   }
   return (
