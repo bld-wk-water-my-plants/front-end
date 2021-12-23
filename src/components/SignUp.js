@@ -1,9 +1,23 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from 'axios';
 /* this may need to be edited because i was rushing while trying to do this so im not confident in it*/
-
+//the url posted doesn't allow 
 
 const SignUp = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [number, setNumber] = useState("");
+
+  const handleSubmit =e=>{
+    e.preventDefault();
+    axios.post('https://water-my-plants-build-week.herokuapp.com/api/auth/register', {username, password, number})
+      .then(esp=>{
+        console.log(esp)
+      })
+      .catch(err=>{
+        console.error(err)
+      })
+  }
   return (
     <div className="top">
       <div className="title">
@@ -13,7 +27,7 @@ const SignUp = () => {
       </div>
 
       <div className="fill">
-          <form className="usernamee" action="#" method="POST">
+          <form className="username" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="username"
@@ -28,6 +42,7 @@ const SignUp = () => {
                   autoComplete="username"
                   required
                   className="style"
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
             </div>
@@ -47,6 +62,7 @@ const SignUp = () => {
                   autoComplete="current-password"
                   required
                   className="style"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -65,7 +81,8 @@ const SignUp = () => {
                   autoComplete="phone"
                   required
                   className="style"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"                />
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  onChange={(e) => setNumber(e.target.value)}                />
               </div>
               <small>Format: 123-456-7890</small>
             </div>

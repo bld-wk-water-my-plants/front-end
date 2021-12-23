@@ -20,7 +20,7 @@ function App() {
             {/*isLoggedIn &&*/ <Link to="/edituser">Edit Account</Link>}
           </li>
           <li>
-            {/*isLoggedIn &&*/ <Link to="/plants/:id">Plants</Link>}
+            {/*isLoggedIn &&*/ <Link to="/plants">Plants</Link>}
           </li>
           <li>
             <Link to="/signup">Sign Up</Link>
@@ -35,9 +35,9 @@ function App() {
       </header>
       <Switch>
         <Route path='/plants' component={Plants} />
-        <Route path='/edituser' />
+        <Route path='/edituser' component={EditUser}/>
         <Route path='/signup' component={SignUp} />
-        <Route path='/logout' />
+        <Route path='/logout' component={Logout}/>
         <Route path='/login' component={Login} />
         <Route path="/" />    
       </Switch>
