@@ -18,10 +18,10 @@ function App() {
         <h1>Water My Plants</h1>
         <ul>
           <li>
-            {/*isLoggedIn &&*/ <Link to="/edituser" className='li'>Edit Account</Link>}
+            {isLoggedIn && <Link to="/edituser" className='li'>Edit Account</Link>}
           </li>
           <li>
-            {/*isLoggedIn &&*/ <Link to="/plants" className='li'>Plants</Link>}
+            {isLoggedIn && <Link to="/plants" className='li'>Plants</Link>}
           </li>
           <li>
             <Link to="/signup" className='li' >Sign Up</Link>
@@ -30,17 +30,17 @@ function App() {
             <Link to="/login" className='li'>Login</Link>
           </li>
           <li>
-            {/*isLoggedIn &&*/ <Link to="/logout" className='li'>Logout</Link>}
+            {isLoggedIn && <Link to="/logout" className='li'>Logout</Link>}
           </li>
         </ul>
       </header>
       <Switch>
         <PrivateRoute path='/plants' component={Plants} />
-        <Route path='/addplant' component={AddPlant} />
-        <Route path='/editplant' component={EditPlant} />
-        <PrivateRoute path='/edituser' />
+        <PrivateRoute path='/addplant' component={AddPlant} />
+        <PrivateRoute path='/editplant' component={EditPlant} />
+        <PrivateRoute path='/edituser' component={EditUser}/>
         <Route path='/signup' component={SignUp} />
-        <PrivateRoute path='/logout' />
+        <PrivateRoute path='/logout' component={Logout}/>
         <Route path='/login' component={Login} />
         <Route path="/" />    
       </Switch>
