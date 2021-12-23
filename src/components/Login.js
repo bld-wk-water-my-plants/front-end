@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
 import axios from 'axios';
 
 export default function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-  
+    const { push } = useHistory();
+
     function validateForm() {
       return username.length > 5 && password.length > 8;
     }
@@ -18,6 +20,7 @@ export default function Login() {
           localStorage.setItem("token", token);
           localStorage.setItem("user_id", user_id);
           localStorage.setItem("username", username);
+          push('/plants')
         })
         .catch(err=>{
           console.error(err);

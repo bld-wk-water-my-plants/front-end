@@ -5,6 +5,7 @@ import Plants from './components/Plants';
 import Logout from './components/Logout';
 import EditUser from './components/EditUser';
 import AddPlant from "./components/AddPlant";
+import EditPlant from "./components/EditPlant";
 import PrivateRoute from './components/PrivateRoute';
 import './App.css';
 
@@ -36,6 +37,7 @@ function App() {
       <Switch>
         <PrivateRoute path='/plants' component={Plants} />
         <Route path='/addplant' component={AddPlant} />
+        <Route path='/editplant' component={EditPlant} />
         <PrivateRoute path='/edituser' />
         <Route path='/signup' component={SignUp} />
         <PrivateRoute path='/logout' />
