@@ -46,6 +46,9 @@ export default function Plants(props) {
                 <Link to="/addplant">
                     <button>Add Plant</button>
                 </Link>
+                <Link to="/editplant">
+                <button>Edit Plant</button>
+                </Link>
             </div>
             <div className="plantList">
                 {
