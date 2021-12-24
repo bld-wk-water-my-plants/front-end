@@ -119,29 +119,29 @@ li {
 
 h1{
   text-align:left;
-  color: gray;
+  color: #8FC1E3;
   margin-left: 3%;
 }
 
 
-/* nav styling */
+/* nav links styling */
 .li {
-  color:gray;
+  color: #8FC1E3;
   font-size: 1.1rem;
   text-decoration: none;
   width: 100%;
 }
 
 .li:hover {
-  color: seagreen;
+  color: #5085A5;
 }
 
 /* login & signup styling */
 .login, .top {
   font-size: 2.1rem;
-  color: rgba(9, 116, 9);
+  color: #31708E;
   background-color: white;
-  border-radius: 2%;
+  border-radius: 25px;
   height: 60vh;
   width: 25%;
   position: relative;
@@ -152,32 +152,56 @@ h1{
 h2 {
   font-size: 2rem;
   padding: 2%;
-  color: rgba(9, 116, 9)
+  color: #31708E;
+}
+
+.edit {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 0.5rem;
 }
 
 small {
   font-size: 1rem;
+  color: #8FC1E3;
 }
 
-.form-box, .style {
+.form-box {
   height: 5vh;
   width: 70%;
   outline: none;
-  background-color: white;
   border-left: none;
   border-right: none;
   border-top: none;
-  border-color: rgba(9, 116, 9);
+  border-color: #31708E;
 }
 
 .submitBtn {
   height: 6vh;
   width: 70%;
-  background-color: rgba(9, 116, 9);
-  color: black;
-  border: 2px solid rgba(9, 116, 9);
+  background-color: #31708E;
+  color: #8FC1E3;
+  border: 2px solid #31708E;
   border-radius: 25px;
   font-size: 1.1rem;
   padding: 1%;
   margin-top: 8%;
+}
+
+.submitBtn:hover {
+  background-color: #8FC1E3;
+  color: #31708E;
+}
+
+.signup, .welcome, .edit {
+  background-color: #31708E;
+  color: #8FC1E3;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.App-header {
+  background-color: #31708E;
 }

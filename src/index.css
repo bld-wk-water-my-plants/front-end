@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(9, 116, 9);
-  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  font-family: 'Roboto Mono', sans-serif;
 }
 
 code {
