@@ -46,7 +46,7 @@ const SignUp = () => {
                   autoComplete="username"
                   required
                   autoFocus
-                  className="style"
+                  className="form-box"
                   onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
@@ -67,7 +67,7 @@ const SignUp = () => {
                   placeholder="Password"
                   autoComplete="current-password"
                   required
-                  className="style"
+                  className="form-box"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
@@ -87,7 +87,7 @@ const SignUp = () => {
                   autoComplete="phone"
                   placeholder="Phone Number"
                   required
-                  className="style"
+                  className="form-box"
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   onChange={(e) => setNumber(e.target.value)}                />
               </div>

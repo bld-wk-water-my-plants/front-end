@@ -31,8 +31,8 @@ export default function Login() {
       <div className="login">
         <Form onSubmit={onSubmit}>
           <Form.Group className="username" controlId="username">
-          <br/>
-            <h2>Welcome</h2>
+          
+            <h2 className='welcome'>Welcome</h2>
             <Form.Control
               autoFocus
               required

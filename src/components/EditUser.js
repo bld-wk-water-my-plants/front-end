@@ -36,12 +36,13 @@ const EditUser = ()=>{
 
 
 	return (
-		<div>
-			<h2>Edit Your Account Info!</h2>
+		<div className="top">
+			<h2 className="edit">Edit Your Account Info!</h2>
 			<form onSubmit={handleSubmit}>
         <input
           type="text"
           name="username"
+          className="form-box"
           onChange={changeHandler}
           placeholder="Username"
           value={item.nickname}
@@ -51,6 +52,7 @@ const EditUser = ()=>{
         <input
           type="text"
           name="password"
+          className="form-box"
           onChange={changeHandler}
           placeholder="Password"
           value={item.password}
@@ -60,6 +62,7 @@ const EditUser = ()=>{
         <input
           type="tel"
           name="tel"
+          className="form-box"
           onChange={changeHandler}
           placeholder="Phone Number"
           value={item.phoneNumber}
@@ -69,7 +72,7 @@ const EditUser = ()=>{
 				<small>Format: 123-456-7890</small>
 				<div className="baseline" />
 				<h4>Make sure all fields are filled out before updating!<br/> If you are not changing anything, please input the same information</h4>
-        <button className="md-button form-button">Update</button>
+        <button className="submitBtn form-button">Update</button>
       </form>
 			
 		</div>
