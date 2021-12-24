@@ -13,9 +13,10 @@ const initialItem = {
   
 const EditPlant = ()=>{
 	const [item, setItem] = useState(initialItem);
-	const { id } = useParams();
+	
 
 	useEffect(()=> {
+    const { id } = useParams();
     axiosWithAuth().get(`api/auth/plants/${id}`)
       .then(resp=> {
         setItem(resp.data);

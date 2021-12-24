@@ -5,7 +5,6 @@ import axiosWithAuth from "./../utils/axiosWithAuth";
 const initialItem = {
   plant_nickname: "",
   species_name: "",
-  image: "",
   h2o_frequency: "",
 };
 
@@ -26,12 +25,13 @@ const AddPlant = ()=>{
 
   const handleSubmit = e => {
     e.preventDefault();
-    axiosWithAuth().post(`api/auth/plants`, item)
+    const id = localStorage.getItem('user_id')
+    axiosWithAuth().post(`/api/auth/plants/${id}`, item)
       .then(resp=> {
 				console.log(resp);
       })
       .catch(err=>{
-        console.log(err);
+        console.error(err);
       })
   
   };
@@ -43,7 +43,7 @@ const AddPlant = ()=>{
 			<form onSubmit={handleSubmit}>
         <input
           type="text"
-          name="nickname"
+          name="plant_nickname"
           onChange={changeHandler}
           placeholder="Nickname"
           value={item.plant_nickname}
@@ -52,7 +52,7 @@ const AddPlant = ()=>{
 
         <input
           type="text"
-          name="species"
+          name="species_name"
           onChange={changeHandler}
           placeholder="Species Name"
           value={item.species_name}
@@ -61,7 +61,7 @@ const AddPlant = ()=>{
 
         <input
           type="text"
-          name="h2ofrequency"
+          name="h2o_frequency"
           onChange={changeHandler}
           placeholder="H20 Frequency"
           value={item.h2o_frequency}

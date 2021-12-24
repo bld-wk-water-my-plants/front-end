@@ -37,7 +37,7 @@ function App() {
       <Switch>
         <PrivateRoute path='/plants' component={Plants} />
         <PrivateRoute path='/addplant' component={AddPlant} />
-        <PrivateRoute path='/editplant' component={EditPlant} />
+        <PrivateRoute path='/editplant/:id' component={EditPlant} />
         <PrivateRoute path='/edituser' component={EditUser}/>
         <Route path='/signup' component={SignUp} />
         <PrivateRoute path='/logout' component={Logout}/>
